@@ -1,0 +1,22 @@
+name: sakamata
+services:
+  nginx:
+    depends_on:
+      - api
+      - client
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - "3050:80"
+  api:
+    build:
+      context: ./server
+    ports:
+      - "5000:5000"
+    restart: always
+  client:
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"

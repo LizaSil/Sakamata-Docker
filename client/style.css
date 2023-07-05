@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body::before {
+  position: absolute;
+}
+body {
+  background-image: url("./img/chloe-laying.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ",
+    Meiryo, "MS PGothic", sans-serif;
+}
+body::before {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.chloe,
+body::before {
+  left: 0;
+  position: absolute;
+}
+.chloe,
+.timer {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.chloe,
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.video-player {
+  height: 80vh;
+  width: 80vw;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.timer {
+  display: flex;
+  margin-top: 10rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 700;
+  border: 2.5px solid #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  gap: 8rem;
+}
+.days,
+.hours,
+.minutes,
+.seconds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+.timer span:nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.linkContainer {
+  display: flex;
+  gap: 10vw;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.link img {
+  max-width: 4.5vw;
+  height: 4.5vw;
+  margin: 0 1rem;
+  color: #fff;
+  filter: grayscale() contrast(0.5);
+}
+.link img:hover {
+  transition: 0.2s;
+  filter: none;
+}
+.chloe {
+  padding: 0 1rem;
+  writing-mode: vertical-rl;
+  cursor: default;
+  font-size: 6vh;
+  margin-top: 10rem;
+  font-weight: 600;
+  background-clip: text;
+  background: linear-gradient(100deg, #af0f71, #5b021d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.github {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  height: 3rem;
+  width: 3rem;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.bounce {
+  animation: 0.2s infinite alternate bounce;
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  .timer {
+    flex-direction: column;
+    margin: 1vw;
+    gap: 2rem;
+    font-size: 3rem;
+    width: auto;
+    border: none;
+  }
+  .video-player {
+    height: 70vh;
+    width: 100vw;
+  }
+  .link img {
+    max-width: 8vw;
+    height: 8vw;
+  }
+  .chloe,
+  .github {
+    display: none;
+  }
+  body {
+    background-position: 0 0;
+    overflow: hidden;
+  }
+}
